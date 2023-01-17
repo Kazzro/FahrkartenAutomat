@@ -1,10 +1,6 @@
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class FahrkartenAutomat {
@@ -146,7 +142,7 @@ public class FahrkartenAutomat {
     }
 
     private static void adminKonsole() {
-        System.out.println("");
+        System.out.println();
         int command = tastatur.nextInt();
         switch (command) {
             case 1: {
