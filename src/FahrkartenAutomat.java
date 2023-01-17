@@ -1,3 +1,10 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class FahrkartenAutomat {
@@ -51,9 +58,12 @@ public class FahrkartenAutomat {
             }
 
             public void printOut() {
+                LocalDate now = LocalDate.now();
+                System.out.printf("Herzlich Willkommen, \t\t\t\t\t\t\t%s%n%n%nFahkartenbestellvorgang:%n========================%n",
+                        now.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
                 System.out.println("Wählen Sie ihre Wunschfahrkarte für Berlin AB aus:\n");
                 for (int i = 0; i < counter; i++) {
-                    System.out.println("Ticket :" + bezeichnung[i] + "  Preis : [ " + preis[i] + " € ] bitte eingabe: (" + i + ")");
+                    System.out.printf("Ticket :%40s  Preis : [ %02.2f € ] bitte eingabe: (%d)%n", bezeichnung[i], preis[i], i);
                 }
             }
         }
